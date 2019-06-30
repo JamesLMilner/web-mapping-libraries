@@ -1,5 +1,9 @@
 # Web Map Comparison
 
+## Live Demos
+
+You can see the live demos on the [GitHub pages](https://jamesmilneruk.github.io/web-mapping-libraries/) for this repository
+
 ## Mapping Libraries
 
 * [Google](google/index.html)
