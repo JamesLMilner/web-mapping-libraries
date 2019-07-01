@@ -1,0 +1,36 @@
+<html>
+  <head>
+    <meta charset="utf-8" /> 
+     <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+      <style>
+        body, html {
+          border: 0;
+          margin: 0;
+          padding: 0
+        }
+        #map {
+          height: 100vh;
+          width: 100vw;
+        }
+      </style>
+      <script src="https://unpkg.com/three/build/three.min.js"></script>
+      <script src="https://unpkg.com/@here/harp.gl/dist/harp.js"></script>
+  </head>
+  <body>
+    <canvas id="map"></canvas>
+    <script>
+      const map = new harp.MapView({
+        canvas: document.getElementById('map'),
+        theme: "https://unpkg.com/@here/harp-map-theme@latest/resources/berlin_tilezen_night_reduced.json",
+      });
+      const mapControls = new harp.MapControls(map);
+      const omvDataSource = new harp.OmvDataSource({
+        baseUrl: "https://xyz.api.here.com/tiles/herebase.02",
+        apiFormat: harp.APIFormat.XYZOMV,
+        styleSetName: "tilezen",
+        authenticationCode: 'YOUR-XYZ-TOKEN',
+      });
+      map.addDataSource(omvDataSource);
+    </script>
+  </body>
+</html>
